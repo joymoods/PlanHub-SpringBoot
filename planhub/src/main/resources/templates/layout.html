@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PlanHub</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-black text-white">
+<header class="text-center py-4 bg-black">
+    <h1 class="text-4xl text-orange-500 font-bold">PlanHub</h1>
+    <nav class="mt-4">
+        <a class="mx-2 hover:text-orange-500" th:href="@{/}">Dashboard</a>
+        <a class="mx-2 hover:text-orange-500" th:href="@{/projects}">Projekte</a>
+        <a class="mx-2 hover:text-orange-500" th:href="@{/tasks}">Aufgaben</a>
+        <a class="mx-2 hover:text-orange-500" th:href="@{/profile}">Profil</a>
+    </nav>
+</header>
+<div class="container mx-auto p-4" th:replace="~{::content}"></div>
+</body>
+</html>

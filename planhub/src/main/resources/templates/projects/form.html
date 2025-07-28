@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="layout :: content">
+<div class="max-w-sm mx-auto">
+    <h2 class="text-2xl mb-4">Projekt</h2>
+    <form method="post" th:object="${project}">
+        <div class="mb-4">
+            <label class="block">Name</label>
+            <input class="w-full text-black" th:field="*{name}"/>
+        </div>
+        <div class="mb-4">
+            <label class="block">Beschreibung</label>
+            <textarea class="w-full text-black" th:field="*{description}"></textarea>
+        </div>
+        <button class="bg-orange-500 px-4 py-2 rounded" type="submit">Speichern</button>
+    </form>
+</div>
+</html>
