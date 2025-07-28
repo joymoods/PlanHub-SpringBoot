@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en" th:fragment="content">
 <head>
     <meta charset="UTF-8">
     <title>PlanHub</title>
@@ -15,7 +15,7 @@
         <a class="mx-2 hover:text-orange-500" th:href="@{/profile}">Profil</a>
     </nav>
 </header>
-<div class="container mx-auto p-4" th:fragment="content">
+<div class="container mx-auto p-4">
     <main th:insert="~{::body}"></main>
 </div>
 </body>
