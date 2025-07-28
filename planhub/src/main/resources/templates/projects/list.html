@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="layout :: content">
+<div>
+    <div class="mb-4 text-right">
+        <a class="bg-orange-500 px-4 py-2 rounded" th:href="@{/projects/new}">Neues Projekt</a>
+    </div>
+    <ul>
+        <li th:each="p : ${projects}" class="border-b border-gray-700 py-2 flex justify-between">
+            <span th:text="${p.name}"></span>
+            <span>
+                <a class="mx-1 hover:text-orange-500" th:href="@{'/projects/' + ${p.id} + '/edit'}">Bearbeiten</a>
+                <form th:action="@{'/projects/' + ${p.id} + '/delete'}" method="post" class="inline">
+                    <button class="mx-1 hover:text-orange-500">Löschen</button>
+                </form>
+            </span>
+        </li>
+    </ul>
+</div>
+</html>

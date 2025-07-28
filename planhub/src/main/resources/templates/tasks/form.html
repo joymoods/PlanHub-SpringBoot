@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="layout :: content">
+<div class="max-w-sm mx-auto">
+    <h2 class="text-2xl mb-4">Aufgabe</h2>
+    <form method="post" th:object="${task}">
+        <div class="mb-4">
+            <label class="block">Titel</label>
+            <input class="w-full text-black" th:field="*{title}"/>
+        </div>
+        <div class="mb-4">
+            <label class="block">Beschreibung</label>
+            <textarea class="w-full text-black" th:field="*{description}"></textarea>
+        </div>
+        <div class="mb-4">
+            <label class="block">Status</label>
+            <select class="w-full text-black" th:field="*{status}">
+                <option th:value="${null}" disabled>Wähle Status</option>
+                <option th:each="s : ${T(com.planhub.model.TaskStatus).values()}" th:value="${s}" th:text="${s}"></option>
+            </select>
+        </div>
+        <div class="mb-4">
+            <label class="block">Priorität</label>
+            <select class="w-full text-black" th:field="*{priority}">
+                <option th:each="p : ${T(com.planhub.model.TaskPriority).values()}" th:value="${p}" th:text="${p}"></option>
+            </select>
+        </div>
+        <div class="mb-4">
+            <label class="block">Fällig am</label>
+            <input type="date" class="w-full text-black" th:field="*{dueDate}"/>
+        </div>
+        <div class="mb-4">
+            <label class="block">Erinnerung am</label>
+            <input type="date" class="w-full text-black" th:field="*{reminderDate}"/>
+        </div>
+        <div class="mb-4">
+            <label class="block">Projekt</label>
+            <select class="w-full text-black" th:field="*{project}" th:object="${task}">
+                <option th:each="p : ${projects}" th:value="${p}" th:text="${p.name}"></option>
+            </select>
+        </div>
+        <button class="bg-orange-500 px-4 py-2 rounded" type="submit">Speichern</button>
+    </form>
+</div>
+</html>

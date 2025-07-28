@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="layout :: content">
+<div class="max-w-sm mx-auto">
+    <h2 class="text-2xl mb-4">Registrieren</h2>
+    <form method="post" th:object="${user}">
+        <div class="mb-4">
+            <label class="block">Email</label>
+            <input class="w-full text-black" type="email" th:field="*{email}"/>
+        </div>
+        <div class="mb-4">
+            <label class="block">Passwort</label>
+            <input class="w-full text-black" type="password" th:field="*{password}"/>
+        </div>
+        <button class="bg-orange-500 px-4 py-2 rounded" type="submit">Registrieren</button>
+    </form>
+</div>
+</html>
